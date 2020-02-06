@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var session = require('express-session');
+const session = require('express-session');
 const PORT = 8090
 const db = require('./db/connect.js'); 
 
