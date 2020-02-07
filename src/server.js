@@ -9,6 +9,7 @@ const readPost = require('./controllers/readpostcontroller.js');
 const userLogin = require('./controllers/userlogincontroller.js');
 const deletePost = require('./controllers/deletepostcontroller.js');
 const userCreate = require('./controllers/usercreatecontroller.js');
+const updatePost = require('./controllers/updatepostcontroller.js');
 
 //Start db
 db.connect((err)=>{
@@ -36,8 +37,9 @@ app.use(express.json());
 // ENDPOINTS
 app.post('/user/create',userCreate);
 app.post('/user/login', userLogin);
-app.get('/post/read', readPost);
 app.post('/post/new', createPost);
+app.post('/post/update/:id',updatePost);
+app.get('/post/read', readPost);
 app.delete('/post/deletepost/:id', deletePost);
 
 
