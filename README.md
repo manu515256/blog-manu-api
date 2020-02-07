@@ -5,7 +5,6 @@
 # Use the DB dump in db/dump
 # Run "nodemon server.js" for run the Api
 ------------------------------------------
-Falta usar ORM para evitar inyeccion sql--
-update de blogs--
-subida de imagenes
+#Falta usar ORM para evitar inyeccion sql--
+#subida de imagenes
 
