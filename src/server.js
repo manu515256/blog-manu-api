@@ -3,6 +3,7 @@ const app = express();
 const session = require('express-session');
 const PORT = 8090
 const db = require('./db/connect.js'); 
+const bodyParser = require("body-parser");
 
 const createPost = require('./controllers/newpostcontroller.js');
 const readPost = require('./controllers/readpostcontroller.js');
@@ -18,6 +19,8 @@ db.connect((err)=>{
 });
 
 // Middleware
+
+
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -26,6 +29,9 @@ app.use(session({
 
 app.use(express.urlencoded({
     extended: false
+}));
+app.use(bodyParser.urlencoded({
+    extended: true
 }));
 app.use((req, res, next)=>{
     res.header("Access-Control-Allow-Origin", "*");
